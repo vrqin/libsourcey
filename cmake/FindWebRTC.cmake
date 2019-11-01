@@ -24,7 +24,7 @@
 # unset(WEBRTC_LIBRARIES_RELEASE CACHE)
 
 # Set required variables
-set(WEBRTC_ROOT_DIR "" CACHE STRING "Where is the WebRTC root directory located?")
+set(WEBRTC_ROOT_DIR "/usr/local/include/webrtc" CACHE STRING "Where is the WebRTC root directory located?")
 # set(WEBRTC_BUILD_DIR_SUFFIX_DEBUG "out/Debug" CACHE STRING "What is the WebRTC debug build directory suffix?")
 # set(WEBRTC_BUILD_DIR_SUFFIX_RELEASE "out/Release" CACHE STRING "What is the WebRTC release build directory suffix?")
 
@@ -47,6 +47,7 @@ find_path(WEBRTC_INCLUDE_DIR
 # ----------------------------------------------------------------------
 if(WEBRTC_INCLUDE_DIR)
   find_existing_directory(debug_dir
+      ${WEBRTC_ROOT_DIR}/lib
       ${WEBRTC_ROOT_DIR}/lib/x64/Debug
       ${WEBRTC_ROOT_DIR}/out/x64/Debug
       ${WEBRTC_ROOT_DIR}/out/Debug_x64
@@ -54,6 +55,7 @@ if(WEBRTC_INCLUDE_DIR)
       ${WEBRTC_ROOT_DIR}/out/Debug)
 
   find_existing_directory(release_dir
+      ${WEBRTC_ROOT_DIR}/lib
       ${WEBRTC_ROOT_DIR}/lib/x64/Release
       ${WEBRTC_ROOT_DIR}/out/x64/Release
       ${WEBRTC_ROOT_DIR}/out/Release_x64

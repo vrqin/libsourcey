@@ -262,7 +262,7 @@ if(WITH_WEBRTC)
   find_dependency(WebRTC REQUIRED)
 
   # We will be building with BoringSSL instead of OpenSSL
-  message(STATUS "Using BoringSSL")
+  message(STATUS "Using BoringSSL ${WEBRTC_ROOT_DIR}")
   set(WITH_OPENSSL OFF)
   set(HAVE_OPENSSL ON)
   set(OPENSSL_IS_BORINGSSL ON)
